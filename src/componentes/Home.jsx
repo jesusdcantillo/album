@@ -6,7 +6,7 @@ import Delanteros from './Delanteros';
 function Home() {
   return (
     <>
-      <h1>Selección Colombia 2014</h1>
+      <h1>Selección Colombia 2018</h1>
       <Arqueros />
       <Defensas />
       <Volantes />
