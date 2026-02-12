@@ -1,24 +1,16 @@
-import "./App.css";
-import Arqueros from "./componentes/Arqueros";
-import Defensas from "./componentes/Defensas";
-import Volantes from "./componentes/Volantes";
-import Delanteros from "./componentes/Delanteros";
-
-const images = {
-  ospina: new URL("./img/ospina.jpg", import.meta.url).href,
-  vargas: new URL("./img/vargas.jpg", import.meta.url).href,
-  josecuadrado: new URL("./img/josecuadrado.jpg", import.meta.url).href,
-};
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './componentes/Home';
+import DetalleJugador from './componentes/DetalleJugador';
 
 function App() {
   return (
-    <>
-      <h1>Selección Colombia 2018</h1>
-      <Arqueros images={images} />
-      <Defensas images={images} />
-      <Volantes images={images} />
-      <Delanteros images={images} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/jugador/:id" element={<DetalleJugador />} />
+      </Routes>
+    </Router>
   );
 }
 
