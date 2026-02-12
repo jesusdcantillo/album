@@ -1,8 +1,8 @@
 import "./App.css";
-import Arqueros from "./Arqueros";
-import Defensas from "./Defensas";
-import Volantes from "./Volantes";
-import Delanteros from "./Delanteros";
+import Arqueros from "./componentes/Arqueros";
+import Defensas from "./componentes/Defensas";
+import Volantes from "./componentes/Volantes";
+import Delanteros from "./componentes/Delanteros";
 
 const images = {
   ospina: new URL("./img/ospina.jpg", import.meta.url).href,
