@@ -1,29 +1,23 @@
-function Defensas({ images }) {
+import { useNavigate } from 'react-router-dom';
+import { jugadoresData } from '../data/jugadores';
+
+function Defensas() {
+  const navigate = useNavigate();
+  const defensas = jugadoresData.filter(j => j.posicion === 'Defensa');
+
   return (
     <div className="grupo">
       <h2>Defensas</h2>
       <div className="cartas-container">
-        <div className="carta">
-          <img src={images.ospina} alt="David Ospina" />
-        </div>
-        <div className="carta">
-          <img src={images.vargas} alt="Camilo Vargas" />
-        </div>
-        <div className="carta">
-          <img src={images.josecuadrado} alt="José Cuadrado" />
-        </div>
-        <div className="carta">
-          <img src={images.ospina} alt="David Ospina" />
-        </div>
-        <div className="carta">
-          <img src={images.vargas} alt="Camilo Vargas" />
-        </div>
-        <div className="carta">
-          <img src={images.josecuadrado} alt="José Cuadrado" />
-        </div>
-        <div className="carta">
-          <img src={images.josecuadrado} alt="José Cuadrado" />
-        </div>
+        {defensas.map((jugador) => (
+          <div 
+            className="carta" 
+            key={jugador.id}
+            onClick={() => navigate(`/jugador/${jugador.id}`)}
+          >
+            <img src={jugador.imagen} alt={jugador.nombre} />
+          </div>
+        ))}
       </div>
     </div>
   );
